@@ -9,13 +9,15 @@
 .bird *,
 .cloud {
   position: absolute;
-
-  &:after,
-  &:before {
-    display: block;
-    content: '';
-    position: absolute;
-  }
+}
+.bird:after, .bird:before,
+.bird *:after,
+.bird *:before,
+.cloud:after,
+.cloud:before {
+  display: block;
+  content: "";
+  position: absolute;
 }
 
 .bird {
@@ -23,7 +25,8 @@
   top: 40%;
   left: 50%;
   z-index: 5;
-  animation: bird-movement-xy 20s linear infinite alternate both, bird-movement-z 50s linear infinite alternate both;
+  -webkit-animation: bird-movement-xy 20s linear infinite alternate both, bird-movement-z 50s linear infinite alternate both;
+          animation: bird-movement-xy 20s linear infinite alternate both, bird-movement-z 50s linear infinite alternate both;
 }
 
 .b-body {
@@ -33,42 +36,37 @@
   border-bottom: 25px solid transparent;
   border-left: 30px solid #5A5A5A;
   transform: rotate(-90deg);
-
-  &:after {
-    top: -55px;
-    right: 30px;
-    border-top: 55px solid transparent;
-    border-bottom: 25px solid transparent;
-    border-left: 25px solid #75BF75;
-    transform: rotate(180deg);
-  }
+}
+.b-body:after {
+  top: -55px;
+  right: 30px;
+  border-top: 55px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 25px solid #75BF75;
+  transform: rotate(180deg);
 }
 
-
-.b-wings {
-
-  &:before {
-    top: 54px;
-    right: -51px;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 50px solid #5A5A5A;
-    transform: rotateZ(90deg) rotateY(90deg);
-    animation: wing-movement-top 0.8s infinite linear both;
-    transform-origin: 0% 0%;
-  }
-
-  &:after {
-    top: 56px;
-    right: -11px;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 50px solid #A9A9A9;
-    transform: rotateZ(-90deg) rotateY(90deg);
-    animation: wing-movement-bottom 0.8s infinite linear both;
-    transform-origin: 0% 0%;
-  }
-
+.b-wings:before {
+  top: 54px;
+  right: -51px;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 50px solid #5A5A5A;
+  transform: rotateZ(90deg) rotateY(90deg);
+  -webkit-animation: wing-movement-top 0.8s infinite linear both;
+          animation: wing-movement-top 0.8s infinite linear both;
+  transform-origin: 0% 0%;
+}
+.b-wings:after {
+  top: 56px;
+  right: -11px;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 50px solid #A9A9A9;
+  transform: rotateZ(-90deg) rotateY(90deg);
+  -webkit-animation: wing-movement-bottom 0.8s infinite linear both;
+          animation: wing-movement-bottom 0.8s infinite linear both;
+  transform-origin: 0% 0%;
 }
 
 .b-details {
@@ -78,15 +76,14 @@
   border-bottom: 5px solid transparent;
   border-left: 5px solid #FFFF43;
   transform: rotate(50deg);
-
-  &:after {
-    top: 8px;
-    right: 3px;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background-color: #2D2D2D;
-  }
+}
+.b-details:after {
+  top: 8px;
+  right: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #2D2D2D;
 }
 
 .b-beak {
@@ -96,15 +93,14 @@
   border-bottom: 11px solid transparent;
   border-left: 13px solid gray;
   transform: rotate(-90deg);
-
-  &:after {
-    top: 3px;
-    right: 10px;
-    border-top: 0px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 11px solid #A9A9A9;
-    transform: rotate(90deg);
-  }
+}
+.b-beak:after {
+  top: 3px;
+  right: 10px;
+  border-top: 0px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 11px solid #A9A9A9;
+  transform: rotate(90deg);
 }
 
 .b-back {
@@ -114,109 +110,1004 @@
   border-bottom: 15px solid transparent;
   border-left: 10px solid #5A5A5A;
   transform: rotate(-130deg);
-
-  &:after {
-    top: -43px;
-    right: 10px;
-    border-top: 43px solid transparent;
-    border-bottom: 11px solid transparent;
-    border-left: 9px solid #75BF75;
-    transform: scale(-1, 1);
-  }
+}
+.b-back:after {
+  top: -43px;
+  right: 10px;
+  border-top: 43px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 9px solid #75BF75;
+  transform: scale(-1, 1);
 }
 
 .cloud {
-    width: 35px;
-    height: 11px;
-    background-color: #fff;
-    border-radius: 100px;
-    box-shadow: 0 1px 5px 0px rgba(50, 50, 50, 0.05);
-    opacity: 1;
-
-    &:after, &:before {background-color: #fff;}
-
-    &:after {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      top: -54%;
-      left: 14%;
-      transform: rotate(-25deg);
-    }
-
-    &:before {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      top: -90%;
-      right: 10%;
-    }
+  width: 35px;
+  height: 11px;
+  background-color: #fff;
+  border-radius: 100px;
+  box-shadow: 0 1px 5px 0px rgba(50, 50, 50, 0.05);
+  opacity: 1;
+}
+.cloud:after, .cloud:before {
+  background-color: #fff;
+}
+.cloud:after {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: -54%;
+  left: 14%;
+  transform: rotate(-25deg);
+}
+.cloud:before {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: -90%;
+  right: 10%;
 }
 
-@for $n from 1 through 30 {
+.cloud:nth-child(1) {
+  top: 96%;
+  left: 191%;
+  transform: scale(3);
+  -webkit-animation: cloud-movement-1 25s -25s infinite linear;
+          animation: cloud-movement-1 25s -25s infinite linear;
+  opacity: 0.92;
+  z-index: 4;
+}
 
-  $animation-time: random(40);
-  $z-value: random(8);
-
-  .cloud:nth-child(#{$n}) {
-    top: percentage(random(100) / 100);
-    left: 100% + percentage(random(100) / 100);
-    transform: scale(-1 + $z-value);
-    animation: cloud-movement-#{$n} #{50 - $animation-time}s #{-$animation-time}s infinite linear;
-    opacity: 0.92;
-    z-index: $z-value;
-  }
-
-  @keyframes cloud-movement-#{$n} {
-
-    99.999% {
+@-webkit-keyframes cloud-movement-1 {
+  99.999% {
     opacity: 0.92;
     left: -10%;
-    }
-
-    100% {opacity: 0;}
+  }
+  100% {
+    opacity: 0;
   }
 }
 
+@keyframes cloud-movement-1 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(2) {
+  top: 80%;
+  left: 163%;
+  transform: scale(3);
+  -webkit-animation: cloud-movement-2 28s -22s infinite linear;
+          animation: cloud-movement-2 28s -22s infinite linear;
+  opacity: 0.92;
+  z-index: 4;
+}
 
+@-webkit-keyframes cloud-movement-2 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-2 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(3) {
+  top: 32%;
+  left: 155%;
+  transform: scale(3);
+  -webkit-animation: cloud-movement-3 34s -16s infinite linear;
+          animation: cloud-movement-3 34s -16s infinite linear;
+  opacity: 0.92;
+  z-index: 4;
+}
+
+@-webkit-keyframes cloud-movement-3 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-3 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(4) {
+  top: 74%;
+  left: 102%;
+  transform: scale(1);
+  -webkit-animation: cloud-movement-4 17s -33s infinite linear;
+          animation: cloud-movement-4 17s -33s infinite linear;
+  opacity: 0.92;
+  z-index: 2;
+}
+
+@-webkit-keyframes cloud-movement-4 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-4 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(5) {
+  top: 2%;
+  left: 119%;
+  transform: scale(5);
+  -webkit-animation: cloud-movement-5 31s -19s infinite linear;
+          animation: cloud-movement-5 31s -19s infinite linear;
+  opacity: 0.92;
+  z-index: 6;
+}
+
+@-webkit-keyframes cloud-movement-5 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-5 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(6) {
+  top: 67%;
+  left: 118%;
+  transform: scale(4);
+  -webkit-animation: cloud-movement-6 10s -40s infinite linear;
+          animation: cloud-movement-6 10s -40s infinite linear;
+  opacity: 0.92;
+  z-index: 5;
+}
+
+@-webkit-keyframes cloud-movement-6 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-6 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(7) {
+  top: 23%;
+  left: 116%;
+  transform: scale(0);
+  -webkit-animation: cloud-movement-7 38s -12s infinite linear;
+          animation: cloud-movement-7 38s -12s infinite linear;
+  opacity: 0.92;
+  z-index: 1;
+}
+
+@-webkit-keyframes cloud-movement-7 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-7 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(8) {
+  top: 96%;
+  left: 136%;
+  transform: scale(2);
+  -webkit-animation: cloud-movement-8 30s -20s infinite linear;
+          animation: cloud-movement-8 30s -20s infinite linear;
+  opacity: 0.92;
+  z-index: 3;
+}
+
+@-webkit-keyframes cloud-movement-8 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-8 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(9) {
+  top: 9%;
+  left: 132%;
+  transform: scale(7);
+  -webkit-animation: cloud-movement-9 29s -21s infinite linear;
+          animation: cloud-movement-9 29s -21s infinite linear;
+  opacity: 0.92;
+  z-index: 8;
+}
+
+@-webkit-keyframes cloud-movement-9 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-9 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(10) {
+  top: 72%;
+  left: 182%;
+  transform: scale(7);
+  -webkit-animation: cloud-movement-10 48s -2s infinite linear;
+          animation: cloud-movement-10 48s -2s infinite linear;
+  opacity: 0.92;
+  z-index: 8;
+}
+
+@-webkit-keyframes cloud-movement-10 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-10 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(11) {
+  top: 4%;
+  left: 114%;
+  transform: scale(7);
+  -webkit-animation: cloud-movement-11 48s -2s infinite linear;
+          animation: cloud-movement-11 48s -2s infinite linear;
+  opacity: 0.92;
+  z-index: 8;
+}
+
+@-webkit-keyframes cloud-movement-11 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-11 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(12) {
+  top: 17%;
+  left: 168%;
+  transform: scale(2);
+  -webkit-animation: cloud-movement-12 33s -17s infinite linear;
+          animation: cloud-movement-12 33s -17s infinite linear;
+  opacity: 0.92;
+  z-index: 3;
+}
+
+@-webkit-keyframes cloud-movement-12 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-12 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(13) {
+  top: 70%;
+  left: 111%;
+  transform: scale(1);
+  -webkit-animation: cloud-movement-13 29s -21s infinite linear;
+          animation: cloud-movement-13 29s -21s infinite linear;
+  opacity: 0.92;
+  z-index: 2;
+}
+
+@-webkit-keyframes cloud-movement-13 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-13 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(14) {
+  top: 95%;
+  left: 173%;
+  transform: scale(2);
+  -webkit-animation: cloud-movement-14 43s -7s infinite linear;
+          animation: cloud-movement-14 43s -7s infinite linear;
+  opacity: 0.92;
+  z-index: 3;
+}
+
+@-webkit-keyframes cloud-movement-14 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-14 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(15) {
+  top: 65%;
+  left: 103%;
+  transform: scale(3);
+  -webkit-animation: cloud-movement-15 49s -1s infinite linear;
+          animation: cloud-movement-15 49s -1s infinite linear;
+  opacity: 0.92;
+  z-index: 4;
+}
+
+@-webkit-keyframes cloud-movement-15 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-15 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(16) {
+  top: 18%;
+  left: 117%;
+  transform: scale(4);
+  -webkit-animation: cloud-movement-16 42s -8s infinite linear;
+          animation: cloud-movement-16 42s -8s infinite linear;
+  opacity: 0.92;
+  z-index: 5;
+}
+
+@-webkit-keyframes cloud-movement-16 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-16 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(17) {
+  top: 29%;
+  left: 198%;
+  transform: scale(3);
+  -webkit-animation: cloud-movement-17 17s -33s infinite linear;
+          animation: cloud-movement-17 17s -33s infinite linear;
+  opacity: 0.92;
+  z-index: 4;
+}
+
+@-webkit-keyframes cloud-movement-17 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-17 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(18) {
+  top: 73%;
+  left: 141%;
+  transform: scale(2);
+  -webkit-animation: cloud-movement-18 14s -36s infinite linear;
+          animation: cloud-movement-18 14s -36s infinite linear;
+  opacity: 0.92;
+  z-index: 3;
+}
+
+@-webkit-keyframes cloud-movement-18 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-18 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(19) {
+  top: 63%;
+  left: 126%;
+  transform: scale(1);
+  -webkit-animation: cloud-movement-19 47s -3s infinite linear;
+          animation: cloud-movement-19 47s -3s infinite linear;
+  opacity: 0.92;
+  z-index: 2;
+}
+
+@-webkit-keyframes cloud-movement-19 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-19 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(20) {
+  top: 60%;
+  left: 182%;
+  transform: scale(0);
+  -webkit-animation: cloud-movement-20 48s -2s infinite linear;
+          animation: cloud-movement-20 48s -2s infinite linear;
+  opacity: 0.92;
+  z-index: 1;
+}
+
+@-webkit-keyframes cloud-movement-20 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-20 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(21) {
+  top: 88%;
+  left: 148%;
+  transform: scale(5);
+  -webkit-animation: cloud-movement-21 30s -20s infinite linear;
+          animation: cloud-movement-21 30s -20s infinite linear;
+  opacity: 0.92;
+  z-index: 6;
+}
+
+@-webkit-keyframes cloud-movement-21 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-21 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(22) {
+  top: 4%;
+  left: 160%;
+  transform: scale(6);
+  -webkit-animation: cloud-movement-22 43s -7s infinite linear;
+          animation: cloud-movement-22 43s -7s infinite linear;
+  opacity: 0.92;
+  z-index: 7;
+}
+
+@-webkit-keyframes cloud-movement-22 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-22 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(23) {
+  top: 82%;
+  left: 139%;
+  transform: scale(6);
+  -webkit-animation: cloud-movement-23 20s -30s infinite linear;
+          animation: cloud-movement-23 20s -30s infinite linear;
+  opacity: 0.92;
+  z-index: 7;
+}
+
+@-webkit-keyframes cloud-movement-23 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-23 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(24) {
+  top: 26%;
+  left: 119%;
+  transform: scale(4);
+  -webkit-animation: cloud-movement-24 48s -2s infinite linear;
+          animation: cloud-movement-24 48s -2s infinite linear;
+  opacity: 0.92;
+  z-index: 5;
+}
+
+@-webkit-keyframes cloud-movement-24 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-24 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(25) {
+  top: 87%;
+  left: 128%;
+  transform: scale(4);
+  -webkit-animation: cloud-movement-25 19s -31s infinite linear;
+          animation: cloud-movement-25 19s -31s infinite linear;
+  opacity: 0.92;
+  z-index: 5;
+}
+
+@-webkit-keyframes cloud-movement-25 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-25 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(26) {
+  top: 16%;
+  left: 103%;
+  transform: scale(1);
+  -webkit-animation: cloud-movement-26 32s -18s infinite linear;
+          animation: cloud-movement-26 32s -18s infinite linear;
+  opacity: 0.92;
+  z-index: 2;
+}
+
+@-webkit-keyframes cloud-movement-26 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-26 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(27) {
+  top: 77%;
+  left: 152%;
+  transform: scale(7);
+  -webkit-animation: cloud-movement-27 35s -15s infinite linear;
+          animation: cloud-movement-27 35s -15s infinite linear;
+  opacity: 0.92;
+  z-index: 8;
+}
+
+@-webkit-keyframes cloud-movement-27 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-27 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(28) {
+  top: 66%;
+  left: 187%;
+  transform: scale(0);
+  -webkit-animation: cloud-movement-28 12s -38s infinite linear;
+          animation: cloud-movement-28 12s -38s infinite linear;
+  opacity: 0.92;
+  z-index: 1;
+}
+
+@-webkit-keyframes cloud-movement-28 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-28 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(29) {
+  top: 59%;
+  left: 147%;
+  transform: scale(0);
+  -webkit-animation: cloud-movement-29 43s -7s infinite linear;
+          animation: cloud-movement-29 43s -7s infinite linear;
+  opacity: 0.92;
+  z-index: 1;
+}
+
+@-webkit-keyframes cloud-movement-29 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-29 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud:nth-child(30) {
+  top: 28%;
+  left: 171%;
+  transform: scale(1);
+  -webkit-animation: cloud-movement-30 19s -31s infinite linear;
+          animation: cloud-movement-30 19s -31s infinite linear;
+  opacity: 0.92;
+  z-index: 2;
+}
+
+@-webkit-keyframes cloud-movement-30 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-movement-30 {
+  99.999% {
+    opacity: 0.92;
+    left: -10%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes wing-movement-bottom {
+  60% {
+    transform: rotateZ(-90deg) rotateY(90deg);
+  }
+  90% {
+    transform: rotateZ(-90deg) rotateY(0deg);
+  }
+}
 @keyframes wing-movement-bottom {
-
-    60% {transform: rotateZ(-90deg) rotateY(90deg);}
-
-    90% {transform: rotateZ(-90deg) rotateY(0deg);}
+  60% {
+    transform: rotateZ(-90deg) rotateY(90deg);
   }
-
-  @keyframes wing-movement-top {
-
-
-    20% {transform: rotateZ(90deg) rotateY(0deg);}
-
-    60% {transform: rotateZ(90deg) rotateY(90deg);}
+  90% {
+    transform: rotateZ(-90deg) rotateY(0deg);
   }
-
-  @keyframes bird-movement-xy {
-
-    25%, 50% {top: 39%;}
-
-    15%, 35%, 60%, 71%, 90% {top: 40%;}
-
-    10%, 20%, 41%, 80% {top: 41%;}
-
-    40%, 70%{top: 42%;}
-
+}
+@-webkit-keyframes wing-movement-top {
+  20% {
+    transform: rotateZ(90deg) rotateY(0deg);
   }
-
-
-  @keyframes bird-movement-z {
-
-    20%, 90% {transform: scale(0.9);}
-
-    10%, 35%, 80% {transform: scale(1);}
-
-    25%, 40%, 71% {transform: scale(1.1);}
-
-    15%, 60%, 70% {transform: scale(1.2);}
-
-    50% {transform: scale(1.3);}
+  60% {
+    transform: rotateZ(90deg) rotateY(90deg);
   }
-
+}
+@keyframes wing-movement-top {
+  20% {
+    transform: rotateZ(90deg) rotateY(0deg);
+  }
+  60% {
+    transform: rotateZ(90deg) rotateY(90deg);
+  }
+}
+@-webkit-keyframes bird-movement-xy {
+  25%, 50% {
+    top: 39%;
+  }
+  15%, 35%, 60%, 71%, 90% {
+    top: 40%;
+  }
+  10%, 20%, 41%, 80% {
+    top: 41%;
+  }
+  40%, 70% {
+    top: 42%;
+  }
+}
+@keyframes bird-movement-xy {
+  25%, 50% {
+    top: 39%;
+  }
+  15%, 35%, 60%, 71%, 90% {
+    top: 40%;
+  }
+  10%, 20%, 41%, 80% {
+    top: 41%;
+  }
+  40%, 70% {
+    top: 42%;
+  }
+}
+@-webkit-keyframes bird-movement-z {
+  20%, 90% {
+    transform: scale(0.9);
+  }
+  10%, 35%, 80% {
+    transform: scale(1);
+  }
+  25%, 40%, 71% {
+    transform: scale(1.1);
+  }
+  15%, 60%, 70% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+@keyframes bird-movement-z {
+  20%, 90% {
+    transform: scale(0.9);
+  }
+  10%, 35%, 80% {
+    transform: scale(1);
+  }
+  25%, 40%, 71% {
+    transform: scale(1.1);
+  }
+  15%, 60%, 70% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
